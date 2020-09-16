@@ -1,8 +1,6 @@
-# Laravel Quiz/Test Project with PDF Results
+# Laravel Vitamin - Skripsi
 
-Quite typical project where user goes through some set of questions - quiz, survey, assessment or similar.
-
-They get the result of how many points they've got, and then get the PDF report via email.
+Project skripsi belongs to Ghania Anti Sabhah
 
 - - - - -
 
@@ -16,7 +14,7 @@ They get the result of how many points they've got, and then get the PDF report 
 
 - - - - -
 
-## How to use
+## How to loggin
 
 
 - You can login to adminpanel by going go `/login` URL and login with credentials __admin@admin.com__ - __password__
