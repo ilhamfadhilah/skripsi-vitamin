@@ -41,6 +41,16 @@
                 </thead>
                 <tbody>
                     @foreach($results as $key => $result)
+                        {{-- {{ $result->questions->pivot }} <br> --}}
+                        {{-- {{ $result->questions }} <br> --}}
+                        {{-- @foreach ($result->questions as $item)
+                            {{$item->question_options}} <br>
+                            @foreach ($item->question_options as $itemed)
+                                @if ($el->id == $item->pivot->option_id)
+                                    {{$el->option_text}}
+                                @endif
+                            @endforeach
+                        @endforeach --}}
                         <tr data-entry-id="{{ $result->id }}">
                             <td>
 
@@ -56,7 +66,7 @@
                             </td>
                             <td>
                                 @foreach($result->questions as $key => $item)
-                                    <span class="badge badge-info">{{ $item->question_text }}</span>
+                                    <span class="badge badge-info">{{ $item->question_text }} : {{ $item->option_text}}</span>
                                 @endforeach
                             </td>
                             <td>

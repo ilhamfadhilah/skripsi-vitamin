@@ -7,6 +7,7 @@ use App\Http\Requests\MassDestroyResultRequest;
 use App\Http\Requests\StoreResultRequest;
 use App\Http\Requests\UpdateResultRequest;
 use App\Question;
+use App\Option;
 use App\Result;
 use App\User;
 use Gate;
@@ -20,6 +21,12 @@ class ResultsController extends Controller
         abort_if(Gate::denies('result_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $results = Result::all();
+
+        foreach ($results as $result) {
+            foreach ($result->questions as $question) {
+                $question->option_text = Option::where('id', $question->pivot->option_id)->first()->option_text;
+            }
+        }
 
         return view('admin.results.index', compact('results'));
     }
